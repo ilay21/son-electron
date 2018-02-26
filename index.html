@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SON-Electron</title>
+</head>
+
+<body>
+    <h1>Welcome to SON On Electron</h1>
+    <button onclick="reload()">reload without cache</button>
+    <button onclick="back()">Back</button>
+    <button onclick="forward()">Forward</button>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+
+    <br>
+    <h3 class="indicator"></h3>
+
+    <!-- Your machine url goes here in src  -->
+    <webview id="foo" src="http://ic-vm-183.cisco.com:5001" preload="./load-ipc.js" style="display:inline-flex; width:100%; height:1000px"></webview>
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js')
+    </script>
+</body>
+
+</html>
